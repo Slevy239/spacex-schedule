@@ -1,7 +1,5 @@
 import React, { Component, } from 'react';
-import Card from '@material-ui/core/Card';
-import Row from 'react-bootstrap/Row';
-import Grid from '@material-ui/core/Grid'
+import { TableContainer, TableHead, TableRow, TableBody, Paper, Table, TableCell } from '@material-ui/core';
 
 class Favorites extends Component {
     state = {
@@ -35,22 +33,27 @@ class Favorites extends Component {
 
                 <br></br>
                 <div>
-                    <Row>
-                        {newData.map(fav => {
-                            return (
-                                <Grid
-                                    container
-                                    // spacing={0}
-                                    direction="column"
-                                    alignItems="center"
-                                    justify="center"
-                                >
-                                    <div>{fav}</div>
-                                </Grid>
+                    <TableContainer component={Paper}>
+                        <Table>
+                            <TableHead>
+                                <TableRow>
+                                    <TableCell><h2>Saved Missions</h2></TableCell>
+                                </TableRow>
+                            </TableHead>
+                            <TableBody>
+                                {newData.map(fav => {
+                                    return (
+                                        <TableRow>
+                                            <TableCell key={fav.length}>
+                                                {fav}
+                                            </TableCell>
+                                        </TableRow>
+                                    )
+                                })}
 
-                            )
-                        })}
-                    </Row>
+                            </TableBody>
+                        </Table>
+                    </TableContainer>
                 </div>
             </div>
         )
