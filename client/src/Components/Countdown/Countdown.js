@@ -38,8 +38,6 @@ class Countdowns extends Component {
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
 
-            // document.getElementById("countdown").innerHTML = days + " days " + hours + " hours "
-            //     + minutes + " minutes " + seconds + " seconds ";
 
             document.getElementById("daysNum").innerHTML = days
             document.getElementById("hoursNum").innerHTML = hours;
@@ -64,19 +62,22 @@ class Countdowns extends Component {
                     justify="center"
                 >
 
-                    <h2>Don't Miss the Next Launch</h2>
-                    <img src='https://upload.wikimedia.org/wikipedia/commons/9/96/SpaceX_Logo_Black.png' alt='logo'/>
-                    <p id='countdown'></p>
+                    <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/SpaceX-Logo.svg/1280px-SpaceX-Logo.svg.png' alt='logo' /><br></br><hr></hr>
+                    <h2>Next Launch in:</h2>
                     <div className='row timeDisplay'>
                         <div id='display'>
                             <p id='daysNum' className='block'></p><hr></hr><p>Days</p>
                         </div>
+                        <h2>:</h2>
                         <div id='display'>
                             <p id='hoursNum' className='block'></p><hr></hr><p>hours</p>
                         </div>
+                        <h2>:</h2>
+
                         <div id='display'>
                             <p id='minsNum' className='block'></p><hr></hr><p>Minutes</p>
                         </div>
+                        <h2>:</h2>
                         <div id='display'>
                             <p id='secondsNum' className='block'></p><hr></hr><p>Seconds</p>
                         </div>

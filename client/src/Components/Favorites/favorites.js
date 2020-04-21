@@ -14,15 +14,10 @@ class Favorites extends Component {
     displayData = (data) => {
         console.log(data)
         this.setState({ favorites: data })
-        // const arr = this.state.favorites.split(',')
-        // console.log(arr)
-        // this.setState
     }
 
     render() {
-        console.log(this.state.favorites)
         const newData = this.state.favorites.split(',')
-
         return (
             <div>
                 <div id='daysNum' className='hide'></div>
@@ -35,8 +30,8 @@ class Favorites extends Component {
                     <TableContainer component={Paper}>
                         <Table>
                             <TableHead>
-                                <TableRow id='saved'>
-                                    <TableCell><h2>Saved Missions</h2></TableCell>
+                                <TableRow>
+                                    <TableCell><h2 id='savedTitle'>Saved Missions</h2></TableCell>
                                 </TableRow>
                             </TableHead>
                             <TableBody>
@@ -44,7 +39,7 @@ class Favorites extends Component {
                                     return (
                                         <TableRow key={fav.length}>
                                             <TableCell >
-                                                {fav}
+                                                <p id='fav'>{fav}</p>
                                             </TableCell>
                                         </TableRow>
                                     )
