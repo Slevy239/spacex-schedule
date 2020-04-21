@@ -1,16 +1,13 @@
 import React, { Component, } from 'react';
 import axios from 'axios'
-import Table from 'react-bootstrap/Table';
 import Moment from 'react-moment';
-import Row from 'react-bootstrap/Row';
-import Button from 'react-bootstrap/Button'
-
-
+import Button from 'react-bootstrap/Button';
+import { TableContainer, TableHead, TableRow, TableBody, Paper, Table, TableCell } from '@material-ui/core';
 
 class Hover extends Component {
     state = {
         result: [],
-        saved: []
+        saved: [],
 
     }
     componentDidMount = () => {
@@ -19,25 +16,25 @@ class Hover extends Component {
                 this.displayRes(res.data)
             })
             .catch(err => console.log(err))
-
+        // localStorage.setItem('info', this.state.saved)
     }
+
     displayRes = data => {
         this.setState({ result: data })
         console.log(this.state.result)
     }
+
     handleSave = event => {
         const name = event.target.name
+        this.state.saved.push(name)
 
-
-        this.setState({ saved: [...this.state.saved, name] })
-        console.log(this.state.saved)
         localStorage.setItem('info', this.state.saved)
-        // localStorage.setItem("site", site)
-        // localStorage.setItem("date", date)
+        this.setState({ saved: this.state.saved })
 
     }
 
     render() {
+
         return (
             <div>
                 <h2>Upcoming Launches</h2>
@@ -46,34 +43,38 @@ class Hover extends Component {
                 <div id='minsNum' className='hide'></div>
                 <div id='secondsNum' className='hide'></div>
                 <br></br>
-                <Row id='table'>
-                    <Table bordered hover size="sm">
-                        <thead>
-                            <tr>
-                                <th id='head'>Mission</th>
-                                <th id='head'>Site</th>
-                                <th id='head'>Date</th>
-                            </tr>
-                        </thead>
-                        <tbody>
+                <TableContainer id='table' component={Paper}>
+                    <Table bordered='true' hover='true' size="small">
+                        <TableHead>
+                            <TableRow>
+                                <TableCell id='head'>Mission</TableCell>
+                                <TableCell id='head'>Site</TableCell>
+                                <TableCell id='head'>Date</TableCell>
+                                <TableCell id='head'></TableCell>
+
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
                             {this.state.result.map(results => {
                                 return (
-                                    <tr className='wrapper' key={results.flight_number}>
-                                        <td align='left'>{results.mission_name}</td>
-                                        <td >{results.launch_site.site_name}</td>
-                                        <td ><Moment unix format="MM/DD/YYYY">{results.launch_date_unix}</Moment></td>
-                                        <td><Button className='button' variant='secondary'
+                                    <TableRow className='wrapper' key={results.links.details}>
+                                        <TableCell align='left'>{results.mission_name}</TableCell>
+                                        <TableCell >{results.launch_site.site_name_long}</TableCell>
+                                        <TableCell ><Moment unix format="MM/DD/YYYY">{results.launch_date_unix}</Moment></TableCell>
+                                        <TableCell><Button className='button' variant='secondary'
                                             onClick={this.handleSave}
-                                            name={results.mission_name}
                                             site={results.launch_site.site_name}
+                                            name={results.mission_name}
                                         // date={results.launch_date_unix}
-                                        >Save</Button></td>
-                                    </tr>
+                                        >Save</Button></TableCell>
+                                    </TableRow>
                                 )
                             })}
-                        </tbody>
+
+                        </TableBody>
+
                     </Table>
-                </Row>
+                </TableContainer>
             </div >
         )
     }

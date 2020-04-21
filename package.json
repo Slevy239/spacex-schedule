@@ -25,6 +25,7 @@
     "mongoose": "^5.8.2",
     "morgan": "^1.9.1",
     "nodemon": "^2.0.2",
+    "react-sharing": "^0.2.1",
     "react-toastify": "^5.5.0"
   },
   "devDependencies": {},
