@@ -11,11 +11,10 @@ function App() {
         <Router>
           <div>
             <Switch>
-              <Route exact path='/' componen={Main} />
+              <Route exact path='/' component={Main} />
             </Switch>
           </div>
         </Router>
-        <Main />
       </div>
     </div>
   );
