@@ -2,7 +2,6 @@ import React, { Component, } from 'react';
 import axios from 'axios'
 import Table from 'react-bootstrap/Table';
 import Moment from 'react-moment';
-import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button'
 

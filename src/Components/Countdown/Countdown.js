@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
-import { Typography } from '@material-ui/core';
 import axios from 'axios';
 import Footer from '../Footer/footer'
-import Card from '@material-ui/core/Card'
 import Grid from '@material-ui/core/Grid'
-import Paper from '@material-ui/core/Paper';
-import Clock from 'react-clock';
-import Row from 'react-bootstrap/Row';
 
 
 
@@ -70,7 +65,7 @@ class Countdowns extends Component {
                 >
 
                     <h2>Don't Miss the Next Launch</h2>
-                    <img src='https://upload.wikimedia.org/wikipedia/commons/9/96/SpaceX_Logo_Black.png' />
+                    <img src='https://upload.wikimedia.org/wikipedia/commons/9/96/SpaceX_Logo_Black.png' alt='logo'/>
                     <p id='countdown'></p>
                     <div className='row timeDisplay'>
                         <div id='display'>

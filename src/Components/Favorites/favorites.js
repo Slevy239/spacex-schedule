@@ -42,8 +42,8 @@ class Favorites extends Component {
                             <TableBody>
                                 {newData.map(fav => {
                                     return (
-                                        <TableRow>
-                                            <TableCell key={fav.length}>
+                                        <TableRow key={fav.length}>
+                                            <TableCell >
                                                 {fav}
                                             </TableCell>
                                         </TableRow>
