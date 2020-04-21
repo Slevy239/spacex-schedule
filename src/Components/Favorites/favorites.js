@@ -25,7 +25,6 @@ class Favorites extends Component {
 
         return (
             <div>
-                <h2>Favorite Launches</h2>
                 <div id='daysNum' className='hide'></div>
                 <div id='hoursNum' className='hide'></div>
                 <div id='minsNum' className='hide'></div>
@@ -36,7 +35,7 @@ class Favorites extends Component {
                     <TableContainer component={Paper}>
                         <Table>
                             <TableHead>
-                                <TableRow>
+                                <TableRow id='saved'>
                                     <TableCell><h2>Saved Missions</h2></TableCell>
                                 </TableRow>
                             </TableHead>

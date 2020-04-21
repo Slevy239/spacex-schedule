@@ -140,3 +140,12 @@ div#links {
 img {
   width: 50%;
 }
+#saved {
+  background-color: gray;
+}
+td.MuiTableCell-root.MuiTableCell-body,
+td.MuiTableCell-root.MuiTableCell-body {
+  text-align: center;
+} {
+  text-align: center;
+}
