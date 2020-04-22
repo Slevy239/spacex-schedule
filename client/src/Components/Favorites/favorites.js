@@ -7,17 +7,16 @@ class Favorites extends Component {
         items: ''
     }
     componentDidMount = () => {
-        if (this.state.favories === '') {
-            localStorage.setItem('info', 'Saved Missions will show up here!')
-        } else {
-            const data = localStorage.getItem('info')
-            this.displayData(data)
-        }
+        const data = localStorage.getItem('info')
+        this.displayData(data)
+
     }
 
     displayData = (data) => {
         console.log(data)
+        localStorage.getItem("info")
         this.setState({ favorites: data })
+
     }
 
     handleDelete = (event) => {
@@ -35,13 +34,14 @@ class Favorites extends Component {
 
         }
         if (arr.length === 0) {
-            this.setState({ favorites: "Saved Missions will show up here!" })
+            this.setState({ favorites: "" })
         }
     }
 
 
     render() {
         const newData = this.state.favorites.split(',')
+
         return (
             <div>
                 <div id='daysNum' className='hide'></div>
@@ -58,7 +58,15 @@ class Favorites extends Component {
                                     <TableCell><h2 id='savedTitle'>Saved Missions</h2></TableCell>
                                 </TableRow>
                             </TableHead>
+                            {localStorage.getItem('info').length < 0 &&
+                                <TableBody>
+                                    <TableRow>
+                                        <TableCell>Saved Missions Will go Here!</TableCell>
+                                    </TableRow>
+                                </TableBody>
+                            }
                             <TableBody>
+
                                 {newData.map((fav, index) => {
                                     return (
                                         <TableRow key={index} id='favRow'>

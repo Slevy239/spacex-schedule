@@ -17,7 +17,6 @@ class Hover extends Component {
                 this.displayRes(res.data)
             })
             .catch(err => console.log(err))
-        // localStorage.setItem('info', this.state.saved)
     }
 
     displayRes = data => {
@@ -28,9 +27,10 @@ class Hover extends Component {
     handleSave = event => {
         const name = event.target.name
         this.state.saved.push(name)
-
-
+        console.log(this.state.saved)
         localStorage.setItem('info', this.state.saved)
+
+
 
         this.setState({ saved: this.state.saved })
 

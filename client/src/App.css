@@ -172,70 +172,47 @@ td.MuiTableCell-root.MuiTableCell-body {
 button#delBtn {
   float: right;
 }
-#daysNum,
-#hoursNum,
-#hoursNum,
-#minsNum,
-#secondsNum {
-  font-size: 150px;
-  margin-left: 10px;
-  margin-right: 10px;
-  color: gray;
-}
-#cln {
-  font-size: 150px;
+
+* {
+  box-sizing: border-box;
 }
 
-p#dayL {
-  font-size: 45px;
-  margin-left: 15px;
-  margin-right: 40px;
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+h1 {
+  letter-spacing: 2px;
+  text-align: center;
+  text-transform: uppercase;
   color: white;
 }
-#small {
-  display: none;
-}
-@media screen and (max-width: 992px) {
- 
-  #daysNum,
-  #hoursNum,
-  #hoursNum,
-  #minsNum,
-  #secondsNum {
-    font-size: 70px;
-    color: gray;
-  }
-  p#dayL {
-    font-size: 21px;
-    color: white;
-    margin-left: 11px;
-}
+
+.countdown-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-@media screen and (max-width: 485px) {
- 
-  #daysNum,
-  #hoursNum,
-  #hoursNum,
-  #minsNum,
-  #secondsNum {
-    font-size: 60px;
-    margin-right: 10px;
-    color: gray;
-  }
-  p#dayL {
-   display: none;
-    
+.countdown-item {
+  color: darkgray;
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  line-height: 30px;
+  margin: 10px;
+  padding-top: 10px;
+  position: relative;
+  width: 100px;
+  height: 100px;
 }
-}
-@media screen and (max-width: 400px) {
-  #daysNum,
-  #hoursNum,
-  #hoursNum,
-  #minsNum,
-  #secondsNum {
-    font-size: 45px;
-    /* margin-right: 10px; */
-    color: gray;
-  }
+
+.countdown-item span {
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
 }
