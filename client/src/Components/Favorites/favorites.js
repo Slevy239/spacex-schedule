@@ -11,7 +11,6 @@ class Favorites extends Component {
             localStorage.setItem('info', 'Saved Missions will show up here!')
         } else {
             const data = localStorage.getItem('info')
-            const nameData = localStorage.getItem('name')
             this.displayData(data)
         }
     }
@@ -20,7 +19,7 @@ class Favorites extends Component {
         console.log(data)
         this.setState({ favorites: data })
     }
-    
+
     handleDelete = (event) => {
         const name = event.target.name
 
@@ -34,9 +33,9 @@ class Favorites extends Component {
             const data = localStorage.getItem('info')
             this.displayData(data)
 
-        } 
-        if(arr.length === 0){
-            this.setState({favorites: "Saved Missions will show up here!"})
+        }
+        if (arr.length === 0) {
+            this.setState({ favorites: "Saved Missions will show up here!" })
         }
     }
 

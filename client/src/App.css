@@ -40,7 +40,8 @@ p,
 h2,
 td,
 th,
-.MuiPaper-root.MuiCard-root.MuiPaper-elevation1.MuiPaper-rounded {
+.MuiPaper-root.MuiCard-root.MuiPaper-elevation1.MuiPaper-rounded,
+span.MuiTab-wrapper {
   font-family: "Baloo Paaji 2", cursive;
 }
 h2 {
@@ -80,11 +81,13 @@ div#simple-tabpanel-0,
 div#simple-tabpanel-1,
 div#simple-tabpanel-2 {
   background: #373b44; /* fallback for old browsers */
-  background: radial-gradient(
-    circle,
-    rgba(11, 5, 5, 1) 28%,
-    rgba(45, 44, 154, 1) 90%
-  );
+  background: url(https://images.wallpaperscraft.com/image/milky_way_starry_sky_trees_122893_2560x1440.jpg)
+    no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
   height: 71px;
 }
 #countdownCard {
@@ -116,12 +119,9 @@ p#countdown {
   display: inline-block;
   /* zoom: 1; */
 }
-#display {
-  margin-left: 30px;
-  margin-right: 30px;
-}
+
 span.MuiTab-wrapper {
-  color: black;
+  color: white;
 }
 .PrivateTabIndicator-colorSecondary-67 {
   background-color: white;
@@ -168,4 +168,18 @@ td.MuiTableCell-root.MuiTableCell-body {
 }
 button#delBtn {
   float: right;
+}
+#daysNum,
+#hoursNum,
+#hoursNum,
+#minsNum,
+#secondsNum {
+  font-size: 150px;
+}
+#cln {
+  font-size: 150px;
+}
+
+p#dayL {
+  font-size: 45px;
 }

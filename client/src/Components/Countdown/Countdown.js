@@ -46,8 +46,14 @@ class Countdowns extends Component {
 
 
 
+
             if (distance < 0) {
                 clearInterval(x);
+                document.getElementById("daysNum").innerHTML = ''
+                document.getElementById("hoursNum").innerHTML = '';
+                document.getElementById("minsNum").innerHTML = '';
+                document.getElementById("secondsNum").innerHTML = '';
+    
             }
         }, 1000);
 
@@ -66,20 +72,20 @@ class Countdowns extends Component {
                     <h2>Next Launch in:</h2>
                     <div className='row timeDisplay'>
                         <div id='display'>
-                            <p id='daysNum' className='block'></p><hr></hr><p>Days</p>
+                            <p id='daysNum' className='block'></p><hr></hr><p id='dayL'>Days</p>
                         </div>
-                        <h2>:</h2>
+                        <h2 id='cln'>:</h2>
                         <div id='display'>
-                            <p id='hoursNum' className='block'></p><hr></hr><p>hours</p>
+                            <p id='hoursNum' className='block'></p><hr></hr><p  id='dayL'>hours</p>
                         </div>
-                        <h2>:</h2>
+                        <h2 id='cln'>:</h2>
 
                         <div id='display'>
-                            <p id='minsNum' className='block'></p><hr></hr><p>Minutes</p>
+                            <p id='minsNum' className='block'></p><hr></hr><p  id='dayL'>Minutes</p>
                         </div>
-                        <h2>:</h2>
+                        <h2 id='cln'>:</h2>
                         <div id='display'>
-                            <p id='secondsNum' className='block'></p><hr></hr><p>Seconds</p>
+                            <p id='secondsNum' className='block'></p><hr></hr><p  id='dayL'>Seconds</p>
                         </div>
                     </div>
                     <br /><br /><br /><br />
