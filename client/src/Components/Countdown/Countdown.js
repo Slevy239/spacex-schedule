@@ -4,8 +4,6 @@ import Footer from '../Footer/footer'
 import Grid from '@material-ui/core/Grid'
 
 
-
-
 class Countdowns extends Component {
     state = {
         time: 0,
@@ -37,15 +35,10 @@ class Countdowns extends Component {
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-
-
-            document.getElementById("daysNum").innerHTML = days
-            document.getElementById("hoursNum").innerHTML = hours;
-            document.getElementById("minsNum").innerHTML = minutes;
+            document.getElementById("daysNum").innerHTML = days + ":";
+            document.getElementById("hoursNum").innerHTML = hours + ":";
+            document.getElementById("minsNum").innerHTML = minutes + ":";
             document.getElementById("secondsNum").innerHTML = seconds;
-
-
-
 
             if (distance < 0) {
                 clearInterval(x);
@@ -53,7 +46,7 @@ class Countdowns extends Component {
                 document.getElementById("hoursNum").innerHTML = '';
                 document.getElementById("minsNum").innerHTML = '';
                 document.getElementById("secondsNum").innerHTML = '';
-    
+
             }
         }, 1000);
 
@@ -70,22 +63,19 @@ class Countdowns extends Component {
 
                     <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/SpaceX-Logo.svg/1280px-SpaceX-Logo.svg.png' alt='logo' /><br></br><hr></hr>
                     <h2>Next Launch in:</h2>
-                    <div className='row timeDisplay'>
-                        <div id='display'>
-                            <p id='daysNum' className='block'></p><hr></hr><p id='dayL'>Days</p>
-                        </div>
-                        <h2 id='cln'>:</h2>
-                        <div id='display'>
-                            <p id='hoursNum' className='block'></p><hr></hr><p  id='dayL'>hours</p>
-                        </div>
-                        <h2 id='cln'>:</h2>
+                    <h2 id='small'>TOO SMALL!</h2>
+                    <div id='content'>
 
-                        <div id='display'>
-                            <p id='minsNum' className='block'></p><hr></hr><p  id='dayL'>Minutes</p>
+                        <div className='row'>
+                            <p id='daysNum' className='block'></p><p id='hoursNum' className='block'></p><p id='hoursNum' className='block'></p> <p id='minsNum' className='block'></p><p id='secondsNum' className='block'></p>
                         </div>
-                        <h2 id='cln'>:</h2>
-                        <div id='display'>
-                            <p id='secondsNum' className='block'></p><hr></hr><p  id='dayL'>Seconds</p>
+
+                        <div className='row words'>
+                            <p id='dayL'>Days</p>
+                            <p id='dayL'>hours</p>
+                            <p id='dayL'>Minutes</p>
+                            <p id='dayL'>Seconds</p>
+
                         </div>
                     </div>
                     <br /><br /><br /><br />
