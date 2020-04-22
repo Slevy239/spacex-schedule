@@ -80,8 +80,12 @@ div#simple-tabpanel-0,
 div#simple-tabpanel-1,
 div#simple-tabpanel-2 {
   background: #373b44; /* fallback for old browsers */
-  background: radial-gradient(circle, rgba(11,5,5,1) 28%, rgba(45,44,154,1) 90%);
-  height: 710px
+  background: radial-gradient(
+    circle,
+    rgba(11, 5, 5, 1) 28%,
+    rgba(45, 44, 154, 1) 90%
+  );
+  height: 71px;
 }
 #countdownCard {
   width: 65%;
@@ -153,6 +157,15 @@ td.MuiTableCell-root.MuiTableCell-body {
   text-align: center;
   margin: 0;
 }
-#savedTitle{
-  color: white
+#savedTitle {
+  color: white;
+}
+#favRow {
+  width: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+button#delBtn {
+  float: right;
 }

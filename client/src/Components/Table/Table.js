@@ -8,6 +8,7 @@ class Hover extends Component {
     state = {
         result: [],
         saved: [],
+        site: []
 
     }
     componentDidMount = () => {
@@ -28,7 +29,9 @@ class Hover extends Component {
         const name = event.target.name
         this.state.saved.push(name)
 
+
         localStorage.setItem('info', this.state.saved)
+
         this.setState({ saved: this.state.saved })
 
     }
@@ -57,7 +60,7 @@ class Hover extends Component {
                         <TableBody>
                             {this.state.result.map(results => {
                                 return (
-                                    <TableRow className='wrapper' key={results.links.details}>
+                                    <TableRow className='wrapper' key={results.flight_number}>
                                         <TableCell align='left'>{results.mission_name}</TableCell>
                                         <TableCell >{results.launch_site.site_name_long}</TableCell>
                                         <TableCell ><Moment unix format="MM/DD/YYYY">{results.launch_date_unix}</Moment></TableCell>
@@ -65,7 +68,6 @@ class Hover extends Component {
                                             onClick={this.handleSave}
                                             site={results.launch_site.site_name}
                                             name={results.mission_name}
-                                        // date={results.launch_date_unix}
                                         >Save</Button></TableCell>
                                     </TableRow>
                                 )

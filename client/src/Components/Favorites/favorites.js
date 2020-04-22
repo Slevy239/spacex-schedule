@@ -3,18 +3,43 @@ import { TableContainer, TableHead, TableRow, TableBody, Paper, Table, TableCell
 
 class Favorites extends Component {
     state = {
-        favorites: ''
+        favorites: '',
+        items: ''
     }
     componentDidMount = () => {
-        const data = localStorage.getItem('info')
-        this.displayData(data)
-
+        if (this.state.favories === '') {
+            localStorage.setItem('info', 'Saved Missions will show up here!')
+        } else {
+            const data = localStorage.getItem('info')
+            const nameData = localStorage.getItem('name')
+            this.displayData(data)
+        }
     }
 
     displayData = (data) => {
         console.log(data)
         this.setState({ favorites: data })
     }
+    
+    handleDelete = (event) => {
+        const name = event.target.name
+
+        const string = this.state.favorites
+        const arr = string.split(',')
+        const index = arr.indexOf(name);
+        if (arr.includes(name) && window.confirm(`Are you sure you want to delete ${name}?`)) {
+            arr.splice(index, 1)
+            arr.join()
+            localStorage.setItem('info', arr)
+            const data = localStorage.getItem('info')
+            this.displayData(data)
+
+        } 
+        if(arr.length === 0){
+            this.setState({favorites: "Saved Missions will show up here!"})
+        }
+    }
+
 
     render() {
         const newData = this.state.favorites.split(',')
@@ -35,11 +60,16 @@ class Favorites extends Component {
                                 </TableRow>
                             </TableHead>
                             <TableBody>
-                                {newData.map(fav => {
+                                {newData.map((fav, index) => {
                                     return (
-                                        <TableRow key={fav.length}>
+                                        <TableRow key={index} id='favRow'>
                                             <TableCell >
-                                                <p id='fav'>{fav}</p>
+                                                <p id='fav'>{fav}  <button
+                                                    onClick={this.handleDelete}
+                                                    name={fav}
+                                                    id='delBtn'
+                                                >Delete</button></p>
+
                                             </TableCell>
                                         </TableRow>
                                     )
