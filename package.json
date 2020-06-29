@@ -1,60 +1,39 @@
 {
-  "name": "rocket-man",
-  "version": "0.1.0",
-  "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.28",
-    "@fortawesome/free-solid-svg-icons": "^5.13.0",
-    "@fortawesome/react-fontawesome": "^0.1.9",
-    "@material-ui/core": "^4.9.10",
-    "@material-ui/icons": "^4.9.1",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "axios": "^0.19.2",
-    "bootstrap": "^4.4.1",
-    "material-ui-icons": "^1.0.0-beta.36",
-    "moment": "^2.24.0",
-    "react": "^16.13.1",
-    "react-bootstrap": "^1.0.0",
-    "react-bootstrap-table": "^4.3.1",
-    "react-bootstrap-table-next": "^4.0.1",
-    "react-clock": "^2.4.0",
-    "react-countdown": "^2.2.1",
-    "react-countdown-circle-timer": "^1.2.1",
-    "react-countdown-now": "^2.1.2",
-    "react-data-table-component": "^6.7.1",
-    "react-dom": "^16.13.1",
-    "react-icons": "^3.9.0",
-    "react-moment": "^0.9.7",
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.1",
-    "react-sharing": "^0.2.1",
-    "react-table": "^7.0.4"
-  },
-  "engines": {
-    "node": "10.15.3",
-    "npm": "6.4.1"
-  },
+  "name": "google-books",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "if-env NODE_ENV=production && npm run start-prod || npm run start-dev",
+    "start-prod": "node server.js",
+    "start-dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "seed": "node scripts/seedDB.js",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm install -- prefix client && npm run build --prefix client"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "author": "Sam Levy",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^5.0.2",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "http-proxy-middleware": "^0.20.0",
+    "if-env": "^1.0.4",
+    "mongoose": "^5.8.2",
+    "morgan": "^1.9.1",
+    "nodemon": "^2.0.2",
+    "react-toastify": "^5.5.0"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Slevy239/GoogleBookSearch.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Slevy239/GoogleBookSearch/issues"
+  },
+  "homepage": "https://github.com/Slevy239/GoogleBookSearch#readme"
 }
