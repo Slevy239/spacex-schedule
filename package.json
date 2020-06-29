@@ -17,6 +17,7 @@
   "author": "Sam Levy",
   "license": "ISC",
   "dependencies": {
+    "bootstrap": "^4.5.0",
     "concurrently": "^5.0.2",
     "cors": "^2.8.5",
     "express": "^4.17.1",
@@ -25,6 +26,7 @@
     "mongoose": "^5.8.2",
     "morgan": "^1.9.1",
     "nodemon": "^2.0.2",
+    "react-bootstrap": "^1.0.1",
     "react-toastify": "^5.5.0"
   },
   "devDependencies": {},
