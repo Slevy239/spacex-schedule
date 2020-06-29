@@ -14,9 +14,9 @@ class Favorites extends Component {
 
     displayData = (data) => {
         console.log(data)
-        
+
         this.setState({ favorites: data })
-        if (localStorage.getItem("info") === '') {
+        if (localStorage.getItem("info") === '' || localStorage.getItem("info") === 'Saved missions will go here!') {
             document.querySelector("#delBtn").style.visibility = "hidden";
 
         }
@@ -30,9 +30,9 @@ class Favorites extends Component {
         const arr = string.split(',')
         const index = arr.indexOf(name);
 
-        if (name ===  "Saved missions will go here!" || name === "") {
+        if (name === "Saved missions will go here!" || name === "") {
             console.log(arr)
-            // window.alert("there is nothing to delete")
+            window.alert("there is nothing to delete")
         } else {
 
             if (arr.includes(name) && window.confirm(`Are you sure you want to delete ${name}?`)) {
