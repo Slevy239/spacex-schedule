@@ -25,16 +25,23 @@ class Favorites extends Component {
         const string = this.state.favorites
         const arr = string.split(',')
         const index = arr.indexOf(name);
-        if (arr.includes(name) && window.confirm(`Are you sure you want to delete ${name}?`)) {
-            arr.splice(index, 1)
-            arr.join()
-            localStorage.setItem('info', arr)
-            const data = localStorage.getItem('info')
-            this.displayData(data)
+        
+        if (!index) {
+            console.log(arr)
+            window.alert("there is nothing to delete")
+        } else {
 
-        }
-        if (arr.length === 0) {
-            this.setState({ favorites: "" })
+            if (arr.includes(name) && window.confirm(`Are you sure you want to delete ${name}?`)) {
+                arr.splice(index, 1)
+                arr.join()
+                localStorage.setItem('info', arr)
+                const data = localStorage.getItem('info')
+                this.displayData(data)
+
+            }
+            if (arr.length === 0) {
+                this.setState({ favorites: "" })
+            }
         }
     }
 

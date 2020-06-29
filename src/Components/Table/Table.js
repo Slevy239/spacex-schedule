@@ -11,7 +11,8 @@ class Hover extends Component {
         site: []
 
     }
-    componentDidMount = () => {
+    componentDindMount = () => {
+        alert("hi")
         axios.get('https://api.spacexdata.com/v3/launches/upcoming')
             .then(res => {
                 this.displayRes(res.data)
@@ -29,8 +30,6 @@ class Hover extends Component {
         this.state.saved.push(name)
         console.log(this.state.saved)
         localStorage.setItem('info', this.state.saved)
-
-
 
         this.setState({ saved: this.state.saved })
 
