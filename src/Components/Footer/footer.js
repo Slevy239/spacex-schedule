@@ -10,7 +10,6 @@ class Footer extends Component {
             url="https://github.com/Slevy239"
             title="react-sharing"
             sites={[
-              'google',
               'twitter',
               'linkedin',
               'facebook',
