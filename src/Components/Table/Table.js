@@ -11,8 +11,7 @@ class Hover extends Component {
         site: []
 
     }
-    componentDindMount = () => {
-        alert("hi")
+    componentDidMount = () => {
         axios.get('https://api.spacexdata.com/v3/launches/upcoming')
             .then(res => {
                 this.displayRes(res.data)
