@@ -27,6 +27,7 @@
     "morgan": "^1.9.1",
     "nodemon": "^2.0.2",
     "react-bootstrap": "^1.0.1",
+    "react-scripts": "^3.4.1",
     "react-toastify": "^5.5.0"
   },
   "devDependencies": {},
